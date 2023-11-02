@@ -1,0 +1,54 @@
+Press 's' to save a calibration image. Press 'c' to perform calibration. Press 'q' to exit.
+Number of corners found: 54
+First corner coordinates: 166.518, 202.226
+i
+Saved frame as C:\Users\Shi Zhang\source\repos\cs5330_project04_calibration&AugmentedReality\res\frame_0.jpg
+s
+Saved calibration image with 54 corners.
+i
+Saved frame as C:\Users\Shi Zhang\source\repos\cs5330_project04_calibration&AugmentedReality\res\frame_1.jpg
+Number of corners found: 54
+First corner coordinates: 240.422, 113.019
+i
+Saved frame as C:\Users\Shi Zhang\source\repos\cs5330_project04_calibration&AugmentedReality\res\frame_2.jpg
+s
+Saved calibration image with 54 corners.
+Number of corners found: 54
+First corner coordinates: 185.043, 15.5938
+i
+Saved frame as C:\Users\Shi Zhang\source\repos\cs5330_project04_calibration&AugmentedReality\res\frame_3.jpg
+s
+Saved calibration image with 54 corners.
+Number of corners found: 54
+First corner coordinates: 111.244, 108.336
+i
+Saved frame as C:\Users\Shi Zhang\source\repos\cs5330_project04_calibration&AugmentedReality\res\frame_4.jpg
+s
+Saved calibration image with 54 corners.
+Number of corners found: 54
+First corner coordinates: 289.944, 49.2963
+Number of corners found: 54
+First corner coordinates: 197.605, 10.4503
+Number of corners found: 54
+First corner coordinates: 177.31, 73.7445
+i
+Saved frame as C:\Users\Shi Zhang\source\repos\cs5330_project04_calibration&AugmentedReality\res\frame_5.jpg
+s
+Saved calibration image with 54 corners.
+c
+Initial Camera Matrix:
+[1, 0, 0;
+ 0, 1, 0;
+ 0, 0, 1]
+Calibration done with re-projection error: 0.104915
+Camera Matrix:
+[639.9162308206168, 0, 317.6447703895622;
+ 0, 639.9162308206168, 245.3957469362847;
+ 0, 0, 1]
+Distortion Coefficients:
+[0.06792175704984212;
+ -0.7026082397760348;
+ -1.492778258873533e-05;
+ -0.000158459787537384;
+ 2.678929149844693]
+Calibration data saved to C:\Users\Shi Zhang\source\repos\cs5330_project04_calibration&AugmentedReality\res\calibration_data.csv

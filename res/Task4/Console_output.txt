@@ -1,0 +1,28 @@
+Camera Matrix:
+[639.9162308206168, 0, 317.6447703895622;
+ 0, 639.9162308206168, 245.3957469362847;
+ 0, 0, 1]
+Distortion Coefficients:
+[0.06792175704984212;
+ -0.7026082397760348;
+ -1.492778258873533e-05;
+ -0.000158459787537384;
+ 2.678929149844693;
+ 0;
+ 0;
+ 0]
+Press 's' to save a calibration image. Press 'c' to perform calibration. Press 'p' to print board's pose. Press 'q' to exit.
+Number of corners found: 54
+First corner coordinates: 161.443, 108.685
+Number of corners found: 54
+First corner coordinates: 161.439, 108.693
+p
+Number of corners found: 54
+First corner coordinates: 161.43, 108.693
+Number of corners found: 54
+First corner coordinates: 208.631, 14.6558
+p
+Object Points size: 54
+Corner set size: 54
+Rotation Vector: [-2.494898210603741, -0.4397100779831483, 0.383119693736577]
+Translation Vector: [-2.406294908739354, -4.633799414467094, 15.2647839730226]
