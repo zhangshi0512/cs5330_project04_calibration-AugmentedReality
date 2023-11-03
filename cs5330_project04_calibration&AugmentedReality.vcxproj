@@ -138,6 +138,7 @@
     <ClInclude Include="CameraCalibration.h" />
     <ClInclude Include="ChessboardDetection.h" />
     <ClInclude Include="FeatureDetection.h" />
+    <ClInclude Include="ModelLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AugmentedReality.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="ChessboardDetection.cpp" />
     <ClCompile Include="FeatureDetection.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ModelLoader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
