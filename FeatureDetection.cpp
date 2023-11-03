@@ -18,3 +18,15 @@ void detectHarrisCorners(const cv::Mat& frame) {
         }
     }
 }
+
+void detectAndDrawFeatures(cv::Mat& frame) {
+    // Create an ORB detector
+    cv::Ptr<cv::ORB> detector = cv::ORB::create();
+
+    // Detect keypoints
+    std::vector<cv::KeyPoint> keypoints;
+    detector->detect(frame, keypoints);
+
+    // Draw keypoints
+    cv::drawKeypoints(frame, keypoints, frame, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
+}

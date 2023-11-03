@@ -18,6 +18,9 @@ std::atomic<char> keyPressed(' ');
 // Global flag to control the persistent display of the virtual object
 std::atomic<bool> displayVirtualObjectPersistent(false);
 
+// Global flag to control the display of features
+std::atomic<bool> displayFeatures(false);
+
 // Function to capture key input from the console
 void captureKeyInput() {
     char key;
@@ -201,7 +204,7 @@ int main() {
     std::vector<TextureCoord> textures;
     std::vector<Normal> normals;
     std::vector<Face> faces;
-    std::string modelPath = "C:\\Users\\Shi Zhang\\source\\repos\\cs5330_project04_calibration&AugmentedReality\\res\\Lowpoly_tree_sample.obj";
+    std::string modelPath = "C:\\Users\\Shi Zhang\\source\\repos\\cs5330_project04_calibration&AugmentedReality\\res\\Lowpoly_tree_sample2.obj";
     if (!loadOBJModel(modelPath, vertices, textures, normals, faces)) {
         std::cerr << "Failed to load the model." << std::endl;
         return -1;
@@ -217,7 +220,7 @@ int main() {
 
 
     // instructions for user to navigate the program
-    std::cout << "Press 's' to save a calibration image. Press 'c' to perform calibration. Press 'p' to print board's pose. Press 'd' to display the virtual object persistently on the chessboard. Press 'q' to exit." << std::endl;
+    std::cout << "Press 's' to save a calibration image. Press 'c' to perform calibration. Press 'p' to print board's pose. Press 'd' to display the virtual object persistently on the chessboard. Press 'f' to display a robust feature on the chessboard. Press 'q' to exit." << std::endl;
 
     std::vector<cv::Point3f> axesPoints = defineAxesPoints();
     cv::Mat rvec, tvec;
@@ -346,15 +349,23 @@ int main() {
                 displayVirtualObject = !displayVirtualObject;
             }
 
+            // Toggle the displayFeatures flag when 'f' is pressed
+            if (key == 'f') {
+                displayFeatures = !displayFeatures;  
+            }
+
 
             keyPressed.store(' ');  // Reset the key
         }
 
         if (displayVirtualObjectPersistent.load() && solvePnP_success) {
-            // Make sure that the chessboard corners have been found before drawing the object
             if (found) {
                 drawVirtualObject(frame, cameraMatrix, distCoefficients, rvec, tvec, corner_set, patternSize);
             }
+        }
+
+        if (displayFeatures.load()) {
+            detectAndDrawFeatures(frame);
         }
 
         // Display the frame
