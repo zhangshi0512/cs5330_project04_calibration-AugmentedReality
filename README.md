@@ -90,6 +90,10 @@ This project aims to develop a system capable of performing real-time augmented 
 
   ![Virtual Object](res/Task6/Task6_Demo_Extension2.png)
 
+  Below is the video demonstration for multiple virtual objects displayed:
+
+  ![Task6_Demo_Reduced](https://github.com/zhangshi0512/cs5330_project04_calibration-AugmentedReality/assets/100053535/12f5a017-7c94-4c5b-b6f4-9fa7e897a750)
+
 ---
 
 ### 4. Reflection
