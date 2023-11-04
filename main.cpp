@@ -157,24 +157,6 @@ void drawVirtualObject(cv::Mat& frame, const cv::Mat& cameraMatrix, const cv::Ma
     }
 }
 
-cv::Vec3f rotationMatrixToEulerAngles(const cv::Mat& R) {
-    float sy = sqrt(R.at<double>(0, 0) * R.at<double>(0, 0) + R.at<double>(1, 0) * R.at<double>(1, 0));
-    bool singular = sy < 1e-6; // If
-
-    float x, y, z;
-    if (!singular) {
-        x = atan2(R.at<double>(2, 1), R.at<double>(2, 2));
-        y = atan2(-R.at<double>(2, 0), sy);
-        z = atan2(R.at<double>(1, 0), R.at<double>(0, 0));
-    }
-    else {
-        x = atan2(-R.at<double>(1, 2), R.at<double>(1, 1));
-        y = atan2(-R.at<double>(2, 0), sy);
-        z = 0;
-    }
-    return cv::Vec3f(x, y, z);
-}
-
 int main() {
     cv::VideoCapture cap(0);
     if (!cap.isOpened()) {
@@ -269,7 +251,6 @@ int main() {
         // Task 6: Draw Virtual Object
         if (found && displayVirtualObject && solvePnP_success) {
             // Task 6: Draw Virtual Object
-            // std::cout << "Model has " << vertices.size() << " vertices, " << faces.size() << " faces." << std::endl;
 
             // Project vertices of the model onto the image
             std::vector<cv::Point2f> modelImagePoints;
@@ -280,7 +261,7 @@ int main() {
                 modelImagePoints.push_back(projectedPoint[0]);
             }
 
-            // Draw the projected points onto the image (this is a simplification, for actual rendering you would need OpenGL or similar)
+            // Draw the projected points onto the image
             for (const auto& point : modelImagePoints) {
                 cv::circle(frame, point, 2, cv::Scalar(0, 255, 0), -1);  // Draw a small green circle at each projected vertex
             }
